@@ -1,0 +1,11 @@
+1655884336262	geckodriver	INFO	Listening on 127.0.0.1:56676
+1655884339409	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haittd\\AppData\\Local\\Temp\\rust_mozprofilezUQVcf"
+1655884340105	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\haittd\\AppData\\Local\\Temp\\rust_mozprofilezUQVcf\\search.json.mozlz4", (void 0)))
+1655884342926	Marionette	INFO	Listening on port 56686
+1655884343183	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://btmc.vn/Content/Home/js/jquery-1.10.0.min.js?v=637783181474896175, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://btmc.vn/Content/Home/js/jquery-2.0.0.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1655884398422	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1655884458160	Marionette	INFO	Stopped listening on port 56686
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]

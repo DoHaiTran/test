@@ -4,15 +4,16 @@ Resource    ../pages/locator/btmc.robot
 
 ***Variables***
 ${TIMEOUT}      60
-${url}      https://btmc.vn/
+&{url}=      btmc=https://btmc.vn/      gp=https://goldprice.org/
 
 ***Keywords***
 
 Open Web Page
-    Open Browser    ${url}      chrome    
+    [Arguments]     ${url}
+    Open Browser    ${url}      ff    
     Set Selenium Speed  0.2
     Maximize Browser Window
-    Click Element   ${dictBTMC.adCloseButton}
+    # Click Element   ${dictBTMC.adCloseButton}
    
 Close Web Page
     Close Browser    
@@ -31,11 +32,3 @@ Click Element
     [Arguments]     ${locator}
     SeleniumLibrary.Wait Until Element Is Visible           ${locator}      timeout=${TIMEOUT}
     SeleniumLibrary.Click Element     ${locator}  
-
-Get text and compare value
-    [Arguments]    ${locator}    ${text_value}
-    ${text}    Get Text Element    ${locator}
-    BuiltIn.Return From Keyword If
-    ...    '${text}' == '${text_value}'    ${true}
-
-

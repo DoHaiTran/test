@@ -1,79 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.9.0 on win32)" generated="20220627 17:48:21.272" rpa="false" schemaversion="3">
-<suite id="s1" name="TC 01" source="C:\Users\haittd\Documents\hai\automation\RobotPractice\testcases\TC_01.robot">
-<test id="s1-t1" name="TC2" line="41">
+<robot generator="Robot 5.0.1 (Python 3.9.0 on win32)" generated="20220708 17:46:44.942" rpa="false" schemaversion="3">
+<suite id="s1" name="TC 01" source="C:\Users\haittd\Documents\hai\automation\test\testcases\TC_01.robot">
+<test id="s1-t1" name="TC1" line="28">
 <kw name="Open Web Page" library="common_keywords">
+<arg>${url.btmc}</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
-<arg>chrome</arg>
+<arg>ff</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220627 17:48:21.444" level="INFO">Opening browser 'chrome' to base url 'https://btmc.vn/'.</msg>
-<status status="PASS" starttime="20220627 17:48:21.444" endtime="20220627 17:49:16.524"/>
+<msg timestamp="20220708 17:46:45.152" level="INFO">Opening browser 'ff' to base url 'https://btmc.vn/'.</msg>
+<msg timestamp="20220708 17:46:45.153" level="INFO">Firefox driver log is always forced to to: C:\Users\haittd\Documents\hai\automation\test\results\geckodriver-13.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20220708 17:51:50.591" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220708 17:51:50.416" endtime="20220708 17:51:50.591"/>
+</kw>
+<msg timestamp="20220708 17:51:50.592" level="FAIL">TimeoutException: Message: TimedPromise timed out after 300000 ms
+</msg>
+<status status="FAIL" starttime="20220708 17:46:45.152" endtime="20220708 17:51:50.593"/>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <arg>0.2</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" starttime="20220627 17:49:16.525" endtime="20220627 17:49:16.526"/>
+<status status="NOT RUN" starttime="20220708 17:51:50.593" endtime="20220708 17:51:50.593"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220627 17:49:16.526" endtime="20220627 17:49:17.016"/>
+<status status="NOT RUN" starttime="20220708 17:51:50.594" endtime="20220708 17:51:50.594"/>
 </kw>
-<kw name="Click Element" library="common_keywords">
-<arg>${dictBTMC.adCloseButton}</arg>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>timeout=${TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220627 17:49:17.019" endtime="20220627 17:49:17.542"/>
+<status status="FAIL" starttime="20220708 17:46:45.151" endtime="20220708 17:51:50.594"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220627 17:49:17.542" level="INFO">Clicking element 'css=span#close1adModal'.</msg>
-<status status="PASS" starttime="20220627 17:49:17.542" endtime="20220627 17:49:18.068"/>
-</kw>
-<status status="PASS" starttime="20220627 17:49:17.016" endtime="20220627 17:49:18.068"/>
-</kw>
-<status status="PASS" starttime="20220627 17:48:21.444" endtime="20220627 17:49:18.069"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>2s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220627 17:49:20.073" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220627 17:49:18.070" endtime="20220627 17:49:20.073"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${a}</var>
-<arg>//span[@class='mr-5']//parent::h3</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20220627 17:49:20.504" level="INFO">${a} = GIÁ VÀNG KHU VỰC HÀ NỘI (Hanoi’s Gold Price) ĐVT 1 = 1.000 VNĐ</msg>
-<status status="PASS" starttime="20220627 17:49:20.073" endtime="20220627 17:49:20.504"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>gia tri: ${a}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220627 17:49:20.504" endtime="20220627 17:49:20.505"/>
+<kw name="Compare price between BTMC price and SJC price">
+<status status="NOT RUN" starttime="20220708 17:51:50.594" endtime="20220708 17:51:50.594"/>
 </kw>
 <kw name="Close Web Page" library="common_keywords">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220627 17:49:20.505" endtime="20220627 17:49:22.886"/>
+<status status="NOT RUN" starttime="20220708 17:51:50.595" endtime="20220708 17:51:50.595"/>
 </kw>
-<status status="PASS" starttime="20220627 17:49:20.505" endtime="20220627 17:49:22.887"/>
-</kw>
-<status status="PASS" starttime="20220627 17:48:21.443" endtime="20220627 17:49:22.889"/>
+<status status="FAIL" starttime="20220708 17:46:45.150" endtime="20220708 17:51:50.595">TimeoutException: Message: TimedPromise timed out after 300000 ms
+</status>
 </test>
-<status status="PASS" starttime="20220627 17:48:21.274" endtime="20220627 17:49:22.893"/>
+<status status="FAIL" starttime="20220708 17:46:44.943" endtime="20220708 17:51:50.597"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="TC 01">TC 01</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="TC 01">TC 01</stat>
 </suite>
 </statistics>
 <errors>

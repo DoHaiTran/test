@@ -1,0 +1,12 @@
+1657450273335	geckodriver	INFO	Listening on 127.0.0.1:57267
+1657450276409	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haittd\\AppData\\Local\\Temp\\rust_mozprofileWzzVhj"
+1657450276748	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\haittd\\AppData\\Local\\Temp\\rust_mozprofileWzzVhj\\search.json.mozlz4", (void 0)))
+1657450277952	Marionette	INFO	Listening on port 57276
+1657450277970	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s.tradingview.com/static/bundles/embed/76821.1ebc19669a6cec1882cd.js, line 17: unreachable code after return statement
+JavaScript warning: https://pagead2.googlesyndication.com/bg/ScuHrLJSuMz-P8UpD_WVXyUZt188tH6pyCCWmvqBSxI.js line 2 > eval line 2096 > eval line 1 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1657450329560	Marionette	INFO	Stopped listening on port 57276
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+[Parent 104404, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.

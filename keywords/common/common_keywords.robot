@@ -7,13 +7,11 @@ ${TIMEOUT}      60
 &{url}=      btmc=https://btmc.vn/      gp=https://goldprice.org/
 
 ***Keywords***
-
 Open Web Page
     [Arguments]     ${url}
     Open Browser    ${url}      ff    
     Set Selenium Speed  0.2
     Maximize Browser Window
-    # Click Element   ${dictBTMC.adCloseButton}
    
 Close Web Page
     Close Browser    

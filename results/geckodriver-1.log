@@ -1,10 +1,10 @@
-1657442643539	geckodriver	INFO	Listening on 127.0.0.1:53973
-1657442646644	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haittd\\AppData\\Local\\Temp\\rust_mozprofileJ6XzBO"
-1657442647029	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\haittd\\AppData\\Local\\Temp\\rust_mozprofileJ6XzBO\\search.json.mozlz4", (void 0)))
-1657442648466	Marionette	INFO	Listening on port 53981
-1657442648702	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1657449863602	geckodriver	INFO	Listening on 127.0.0.1:56636
+1657449866723	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haittd\\AppData\\Local\\Temp\\rust_mozprofilecrID8R"
+1657449867083	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\haittd\\AppData\\Local\\Temp\\rust_mozprofilecrID8R\\search.json.mozlz4", (void 0)))
+1657449868680	Marionette	INFO	Listening on port 56645
+1657449868761	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript warning: https://btmc.vn/Content/Home/js/jquery-1.10.0.min.js?v=637783181474896175, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
 JavaScript warning: https://btmc.vn/Content/Home/js/jquery-2.0.0.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
-1657442840306	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
-1657442849645	Marionette	INFO	Stopped listening on port 53981
+1657450059744	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1657450070452	Marionette	INFO	Stopped listening on port 56645

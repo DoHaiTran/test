@@ -1,0 +1,13 @@
+1657450071409	geckodriver	INFO	Listening on 127.0.0.1:56950
+1657450074502	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-foreground" "-no-remote" "-profile" "C:\\Users\\haittd\\AppData\\Local\\Temp\\rust_mozprofilerP7evM"
+1657450074863	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\haittd\\AppData\\Local\\Temp\\rust_mozprofilerP7evM\\search.json.mozlz4", (void 0)))
+1657450076163	Marionette	INFO	Listening on port 56960
+1657450076548	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://btmc.vn/Content/Home/js/jquery-1.10.0.min.js?v=637783181474896175, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://btmc.vn/Content/Home/js/jquery-2.0.0.min.js, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1657450267510	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1657450328761	Marionette	INFO	Stopped listening on port 56960
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+

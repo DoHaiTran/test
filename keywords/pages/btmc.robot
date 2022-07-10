@@ -38,12 +38,16 @@ Get unit price
     [Return]        ${price_unit}
 
 Calculate price of 1 ounce
-    [Arguments]     ${price_unit}       ${price}
+    [Arguments]     ${type}      
+    ${price_unit}       Get unit price
+    ${price}        Get price of 1/10 ounce  ${type}
     ${price_1_ounce}        BuiltIn.Evaluate        10*${price_unit}*${price}
     [Return]        ${price_1_ounce}
 
 Compare price in 1 ounce
-    [Arguments]     ${price1}   ${price2}   ${gold1}    ${gold2}
+    [Arguments]     ${gold1}    ${gold2}
+    ${price1}       Calculate price of 1 ounce  ${gold1}
+    ${price2}       Calculate price of 1 ounce  ${gold2}
     IF  ${price1} > ${price2}  
         Log     Price of ${gold1} is higher than price of ${gold2}
     ELSE IF     ${price1} < ${price2}
@@ -51,3 +55,4 @@ Compare price in 1 ounce
     ELSE 
         Log     Price of ${gold1} is equal price of ${gold2}
     END
+    

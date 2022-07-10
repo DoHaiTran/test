@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.9.0 on win32)" generated="20220710 15:44:03.347" rpa="false" schemaversion="3">
+<suite id="s1" name="TC 01" source="C:\Users\haittd\Documents\hai\automation\test\testcases\TC_01.robot">
+<test id="s1-t1" name="TC1" line="28">
+<kw name="Open Web Page" library="common_keywords">
+<arg>${url.btmc}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>ff</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220710 15:44:03.525" level="INFO">Opening browser 'ff' to base url 'https://btmc.vn/'.</msg>
+<msg timestamp="20220710 15:44:03.526" level="INFO">Firefox driver log is always forced to to: C:\Users\haittd\Documents\hai\automation\test\results\geckodriver-1.log</msg>
+<status status="PASS" starttime="20220710 15:44:03.525" endtime="20220710 15:47:20.263"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20220710 15:47:20.264" endtime="20220710 15:47:20.264"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220710 15:47:20.264" endtime="20220710 15:47:20.478"/>
+</kw>
+<status status="PASS" starttime="20220710 15:44:03.524" endtime="20220710 15:47:20.478"/>
+</kw>
+<kw name="Compare price between BTMC price and SJC price">
+<kw name="Get unit price" library="btmc">
+<var>${unit}</var>
+<kw name="Verify price unit is visible" library="btmc">
+<kw name="Verify Element Is Visible" library="common_keywords">
+<arg>${dictBTMC.priceUnit}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220710 15:47:20.486" endtime="20220710 15:47:20.727"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220710 15:47:20.727" endtime="20220710 15:47:21.208"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:20.483" endtime="20220710 15:47:21.208"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:20.482" endtime="20220710 15:47:21.208"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text_price_unit}</var>
+<arg>${dictBTMC.priceUnit}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:21.692" level="INFO">${text_price_unit} = GIÁ VÀNG KHU VỰC HÀ NỘI (Hanoi’s Gold Price) ĐVT 1 = 1.000 VNĐ</msg>
+<status status="PASS" starttime="20220710 15:47:21.208" endtime="20220710 15:47:21.692"/>
+</kw>
+<kw name="Get Substring" library="String">
+<var>${price_unit}</var>
+<arg>${text_price_unit}</arg>
+<arg>-9</arg>
+<doc>Returns a substring from ``start`` index to ``end`` index.</doc>
+<msg timestamp="20220710 15:47:21.692" level="INFO">${price_unit} = 1.000 VNĐ</msg>
+<status status="PASS" starttime="20220710 15:47:21.692" endtime="20220710 15:47:21.692"/>
+</kw>
+<kw name="Remove String" library="String">
+<var>${price_unit}</var>
+<arg>${price_unit}</arg>
+<arg>.</arg>
+<arg>VNĐ</arg>
+<doc>Removes all ``removables`` from the given ``string``.</doc>
+<msg timestamp="20220710 15:47:21.693" level="INFO">${price_unit} = 1000 </msg>
+<status status="PASS" starttime="20220710 15:47:21.692" endtime="20220710 15:47:21.693"/>
+</kw>
+<kw name="Convert To Number" library="BuiltIn">
+<arg>${price_unit}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<status status="PASS" starttime="20220710 15:47:21.693" endtime="20220710 15:47:21.693"/>
+</kw>
+<msg timestamp="20220710 15:47:21.693" level="INFO">${unit} = 1000 </msg>
+<status status="PASS" starttime="20220710 15:47:20.481" endtime="20220710 15:47:21.693"/>
+</kw>
+<kw name="Get price of 1/10 ounce" library="btmc">
+<var>${price1}</var>
+<arg>${type.sjc}</arg>
+<kw name="Verify price table is visible" library="btmc">
+<kw name="Verify Element Is Visible" library="common_keywords">
+<arg>${dictBTMC.priceTable}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220710 15:47:21.695" endtime="20220710 15:47:21.910"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220710 15:47:21.910" endtime="20220710 15:47:22.346"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:21.694" endtime="20220710 15:47:22.346"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:21.694" endtime="20220710 15:47:22.346"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{list_type}</var>
+<arg>${dictBTMC.typeOfGoldList}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220710 15:47:22.565" level="INFO">@{list_type} = [ &lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="37beb2f4-ba7b-4828-8400-e6b5f48df9ec")&gt; | &lt;selenium.webdriver.firefox.webelement.Fi...</msg>
+<status status="PASS" starttime="20220710 15:47:22.347" endtime="20220710 15:47:22.565"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${type_of_gold}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220710 15:47:22.566" level="INFO">${type_of_gold} = []</msg>
+<status status="PASS" starttime="20220710 15:47:22.565" endtime="20220710 15:47:22.566"/>
+</kw>
+<for flavor="IN">
+<var>${locator}</var>
+<value>@{list_type}</value>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="37beb2f4-ba7b-4828-8400-e6b5f48df9ec")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:22.785" level="INFO">${name} = VÀNG MIẾNG VRTL</msg>
+<status status="PASS" starttime="20220710 15:47:22.566" endtime="20220710 15:47:22.785"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:22.786" endtime="20220710 15:47:22.787"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:22.566" endtime="20220710 15:47:22.787"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="b215326b-15ab-4334-b1c2-17909a6361ab")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:23.004" level="INFO">${name} = NHẪN TRÒN TRƠN</msg>
+<status status="PASS" starttime="20220710 15:47:22.788" endtime="20220710 15:47:23.004"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:23.005" endtime="20220710 15:47:23.005"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:22.787" endtime="20220710 15:47:23.006"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="0a3aaadb-1c21-42d4-86ef-d21aebc2fd3a")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:23.236" level="INFO">${name} = QUÀ MỪNG
+BẢN VỊ VÀNG</msg>
+<status status="PASS" starttime="20220710 15:47:23.006" endtime="20220710 15:47:23.236"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:23.237" endtime="20220710 15:47:23.238"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:23.006" endtime="20220710 15:47:23.238"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="fbc1d88e-2417-4350-8a74-e52f9697ba19")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:23.454" level="INFO">${name} = VÀNG MIẾNG SJC</msg>
+<status status="PASS" starttime="20220710 15:47:23.239" endtime="20220710 15:47:23.454"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:23.454" endtime="20220710 15:47:23.454"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:23.238" endtime="20220710 15:47:23.454"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="daa0d33d-70e0-4e00-9377-e0b27d593da5")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:23.675" level="INFO">${name} = VÀNG TRANG SỨC 999.9</msg>
+<status status="PASS" starttime="20220710 15:47:23.455" endtime="20220710 15:47:23.675"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:23.675" endtime="20220710 15:47:23.675"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:23.454" endtime="20220710 15:47:23.675"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="74cb34c5-fd6c-4ce5-9010-943b205b4459")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:23.896" level="INFO">${name} = VÀNG TRANG SỨC 99.9</msg>
+<status status="PASS" starttime="20220710 15:47:23.676" endtime="20220710 15:47:23.896"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:23.896" endtime="20220710 15:47:23.897"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:23.675" endtime="20220710 15:47:23.897"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="474d6d6d-70b0-45db-8fae-c0689b834119")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:24.116" level="INFO">${name} = VÀNG HTBT</msg>
+<status status="PASS" starttime="20220710 15:47:23.897" endtime="20220710 15:47:24.116"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:24.116" endtime="20220710 15:47:24.116"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:23.897" endtime="20220710 15:47:24.116"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="a36cac25-9f5d-472c-bebd-a35f924ace64")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:24.334" level="INFO">${name} = VÀNG NGUYÊN LIỆU</msg>
+<status status="PASS" starttime="20220710 15:47:24.117" endtime="20220710 15:47:24.334"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:24.334" endtime="20220710 15:47:24.335"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:24.116" endtime="20220710 15:47:24.335"/>
+</iter>
+<status status="PASS" starttime="20220710 15:47:22.566" endtime="20220710 15:47:24.335"/>
+</for>
+<kw name="Length Should Be" library="BuiltIn">
+<arg>${type_of_gold}</arg>
+<arg>${8}</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<msg timestamp="20220710 15:47:24.336" level="INFO">Length is 8</msg>
+<status status="PASS" starttime="20220710 15:47:24.335" endtime="20220710 15:47:24.336"/>
+</kw>
+<kw name="Get Index From List" library="Collections">
+<var>${index}</var>
+<arg>${type_of_gold}</arg>
+<arg>${type}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<msg timestamp="20220710 15:47:24.336" level="INFO">${index} = 3</msg>
+<status status="PASS" starttime="20220710 15:47:24.336" endtime="20220710 15:47:24.336"/>
+</kw>
+<if>
+<branch type="IF" condition="${index} &gt; -1">
+<kw name="Evaluate" library="BuiltIn">
+<var>${row_index}</var>
+<arg>2+${index}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220710 15:47:24.337" level="INFO">${row_index} = 5</msg>
+<status status="PASS" starttime="20220710 15:47:24.337" endtime="20220710 15:47:24.337"/>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<var>${price}</var>
+<arg>${dictBTMC.priceTable}</arg>
+<arg>${row_index}</arg>
+<arg>5</arg>
+<doc>Returns contents of a table cell.</doc>
+<msg timestamp="20220710 15:47:25.657" level="INFO">${price} = 6854</msg>
+<status status="PASS" starttime="20220710 15:47:24.337" endtime="20220710 15:47:25.657"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${price}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<msg timestamp="20220710 15:47:25.658" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220710 15:47:25.658" endtime="20220710 15:47:25.660"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:24.337" endtime="20220710 15:47:25.660"/>
+</branch>
+<branch type="ELSE">
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>Log</arg>
+<arg>There is no ${type} in gold list</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220710 15:47:25.660" endtime="20220710 15:47:25.660"/>
+</kw>
+<status status="NOT RUN" starttime="20220710 15:47:25.660" endtime="20220710 15:47:25.661"/>
+</branch>
+<status status="PASS" starttime="20220710 15:47:24.336" endtime="20220710 15:47:25.661"/>
+</if>
+<msg timestamp="20220710 15:47:25.661" level="INFO">${price1} = 6854</msg>
+<status status="PASS" starttime="20220710 15:47:21.693" endtime="20220710 15:47:25.661"/>
+</kw>
+<kw name="Get price of 1/10 ounce" library="btmc">
+<var>${price2}</var>
+<arg>${type.btmc}</arg>
+<kw name="Verify price table is visible" library="btmc">
+<kw name="Verify Element Is Visible" library="common_keywords">
+<arg>${dictBTMC.priceTable}</arg>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220710 15:47:25.665" endtime="20220710 15:47:25.889"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>timeout=${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220710 15:47:25.889" endtime="20220710 15:47:26.340"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:25.664" endtime="20220710 15:47:26.341"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:25.663" endtime="20220710 15:47:26.341"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{list_type}</var>
+<arg>${dictBTMC.typeOfGoldList}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220710 15:47:26.573" level="INFO">@{list_type} = [ &lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="37beb2f4-ba7b-4828-8400-e6b5f48df9ec")&gt; | &lt;selenium.webdriver.firefox.webelement.Fi...</msg>
+<status status="PASS" starttime="20220710 15:47:26.342" endtime="20220710 15:47:26.574"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>${type_of_gold}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20220710 15:47:26.575" level="INFO">${type_of_gold} = []</msg>
+<status status="PASS" starttime="20220710 15:47:26.574" endtime="20220710 15:47:26.575"/>
+</kw>
+<for flavor="IN">
+<var>${locator}</var>
+<value>@{list_type}</value>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="37beb2f4-ba7b-4828-8400-e6b5f48df9ec")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:26.789" level="INFO">${name} = VÀNG MIẾNG VRTL</msg>
+<status status="PASS" starttime="20220710 15:47:26.576" endtime="20220710 15:47:26.789"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:26.790" endtime="20220710 15:47:26.791"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:26.576" endtime="20220710 15:47:26.791"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="b215326b-15ab-4334-b1c2-17909a6361ab")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:27.020" level="INFO">${name} = NHẪN TRÒN TRƠN</msg>
+<status status="PASS" starttime="20220710 15:47:26.792" endtime="20220710 15:47:27.020"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:27.021" endtime="20220710 15:47:27.022"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:26.791" endtime="20220710 15:47:27.022"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="0a3aaadb-1c21-42d4-86ef-d21aebc2fd3a")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:27.238" level="INFO">${name} = QUÀ MỪNG
+BẢN VỊ VÀNG</msg>
+<status status="PASS" starttime="20220710 15:47:27.023" endtime="20220710 15:47:27.238"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:27.238" endtime="20220710 15:47:27.239"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:27.022" endtime="20220710 15:47:27.239"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="fbc1d88e-2417-4350-8a74-e52f9697ba19")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:27.461" level="INFO">${name} = VÀNG MIẾNG SJC</msg>
+<status status="PASS" starttime="20220710 15:47:27.240" endtime="20220710 15:47:27.461"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:27.461" endtime="20220710 15:47:27.462"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:27.240" endtime="20220710 15:47:27.462"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="daa0d33d-70e0-4e00-9377-e0b27d593da5")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:27.679" level="INFO">${name} = VÀNG TRANG SỨC 999.9</msg>
+<status status="PASS" starttime="20220710 15:47:27.462" endtime="20220710 15:47:27.679"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:27.680" endtime="20220710 15:47:27.682"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:27.462" endtime="20220710 15:47:27.682"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="74cb34c5-fd6c-4ce5-9010-943b205b4459")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:27.910" level="INFO">${name} = VÀNG TRANG SỨC 99.9</msg>
+<status status="PASS" starttime="20220710 15:47:27.683" endtime="20220710 15:47:27.910"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:27.911" endtime="20220710 15:47:27.912"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:27.682" endtime="20220710 15:47:27.912"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="474d6d6d-70b0-45db-8fae-c0689b834119")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:28.127" level="INFO">${name} = VÀNG HTBT</msg>
+<status status="PASS" starttime="20220710 15:47:27.913" endtime="20220710 15:47:28.127"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:28.127" endtime="20220710 15:47:28.128"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:27.912" endtime="20220710 15:47:28.128"/>
+</iter>
+<iter>
+<var name="${locator}">&lt;selenium.webdriver.firefox.webelement.FirefoxWebElement (session="2d34540b-f509-447f-8695-bb7356933cc2", element="a36cac25-9f5d-472c-bebd-a35f924ace64")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${name}</var>
+<arg>${locator}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220710 15:47:28.345" level="INFO">${name} = VÀNG NGUYÊN LIỆU</msg>
+<status status="PASS" starttime="20220710 15:47:28.128" endtime="20220710 15:47:28.345"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${type_of_gold}</arg>
+<arg>${name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20220710 15:47:28.345" endtime="20220710 15:47:28.346"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:28.128" endtime="20220710 15:47:28.346"/>
+</iter>
+<status status="PASS" starttime="20220710 15:47:26.575" endtime="20220710 15:47:28.346"/>
+</for>
+<kw name="Length Should Be" library="BuiltIn">
+<arg>${type_of_gold}</arg>
+<arg>${8}</arg>
+<doc>Verifies that the length of the given item is correct.</doc>
+<msg timestamp="20220710 15:47:28.347" level="INFO">Length is 8</msg>
+<status status="PASS" starttime="20220710 15:47:28.347" endtime="20220710 15:47:28.347"/>
+</kw>
+<kw name="Get Index From List" library="Collections">
+<var>${index}</var>
+<arg>${type_of_gold}</arg>
+<arg>${type}</arg>
+<doc>Returns the index of the first occurrence of the ``value`` on the list.</doc>
+<msg timestamp="20220710 15:47:28.348" level="INFO">${index} = 4</msg>
+<status status="PASS" starttime="20220710 15:47:28.347" endtime="20220710 15:47:28.348"/>
+</kw>
+<if>
+<branch type="IF" condition="${index} &gt; -1">
+<kw name="Evaluate" library="BuiltIn">
+<var>${row_index}</var>
+<arg>2+${index}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220710 15:47:28.348" level="INFO">${row_index} = 6</msg>
+<status status="PASS" starttime="20220710 15:47:28.348" endtime="20220710 15:47:28.348"/>
+</kw>
+<kw name="Get Table Cell" library="SeleniumLibrary">
+<var>${price}</var>
+<arg>${dictBTMC.priceTable}</arg>
+<arg>${row_index}</arg>
+<arg>5</arg>
+<doc>Returns contents of a table cell.</doc>
+<msg timestamp="20220710 15:47:29.638" level="INFO">${price} = 5250</msg>
+<status status="PASS" starttime="20220710 15:47:28.349" endtime="20220710 15:47:29.638"/>
+</kw>
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>${price}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<msg timestamp="20220710 15:47:29.638" level="INFO">Returning from the enclosing user keyword.</msg>
+<status status="PASS" starttime="20220710 15:47:29.638" endtime="20220710 15:47:29.638"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:28.348" endtime="20220710 15:47:29.638"/>
+</branch>
+<branch type="ELSE">
+<kw name="Return From Keyword" library="BuiltIn">
+<arg>Log</arg>
+<arg>There is no ${type} in gold list</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="NOT RUN" starttime="20220710 15:47:29.638" endtime="20220710 15:47:29.638"/>
+</kw>
+<status status="NOT RUN" starttime="20220710 15:47:29.638" endtime="20220710 15:47:29.639"/>
+</branch>
+<status status="PASS" starttime="20220710 15:47:28.348" endtime="20220710 15:47:29.639"/>
+</if>
+<msg timestamp="20220710 15:47:29.639" level="INFO">${price2} = 5250</msg>
+<status status="PASS" starttime="20220710 15:47:25.662" endtime="20220710 15:47:29.639"/>
+</kw>
+<kw name="Calculate price of 1 ounce" library="btmc">
+<var>${price_sjc}</var>
+<arg>${unit}</arg>
+<arg>${price1}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_1_ounce}</var>
+<arg>10*${price_unit}*${price}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220710 15:47:29.639" level="INFO">${price_1_ounce} = 68540000</msg>
+<status status="PASS" starttime="20220710 15:47:29.639" endtime="20220710 15:47:29.639"/>
+</kw>
+<msg timestamp="20220710 15:47:29.640" level="INFO">${price_sjc} = 68540000</msg>
+<status status="PASS" starttime="20220710 15:47:29.639" endtime="20220710 15:47:29.640"/>
+</kw>
+<kw name="Calculate price of 1 ounce" library="btmc">
+<var>${price_btmc}</var>
+<arg>${unit}</arg>
+<arg>${price2}</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${price_1_ounce}</var>
+<arg>10*${price_unit}*${price}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20220710 15:47:29.640" level="INFO">${price_1_ounce} = 52500000</msg>
+<status status="PASS" starttime="20220710 15:47:29.640" endtime="20220710 15:47:29.640"/>
+</kw>
+<msg timestamp="20220710 15:47:29.640" level="INFO">${price_btmc} = 52500000</msg>
+<status status="PASS" starttime="20220710 15:47:29.640" endtime="20220710 15:47:29.640"/>
+</kw>
+<kw name="Compare price in 1 ounce" library="btmc">
+<arg>${price_sjc}</arg>
+<arg>${price_btmc}</arg>
+<arg>${type.sjc}</arg>
+<arg>${type.btmc}</arg>
+<if>
+<branch type="IF" condition="${price1} &gt; ${price2}">
+<kw name="Log" library="BuiltIn">
+<arg>Price of ${gold1} is higher than price of ${gold2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220710 15:47:29.642" level="INFO">Price of VÀNG MIẾNG SJC is higher than price of VÀNG TRANG SỨC 999.9</msg>
+<status status="PASS" starttime="20220710 15:47:29.642" endtime="20220710 15:47:29.642"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:29.642" endtime="20220710 15:47:29.642"/>
+</branch>
+<branch type="ELSE IF" condition="${price1} &lt; ${price2}">
+<kw name="Log" library="BuiltIn">
+<arg>Price of ${gold2} is higher than price of ${gold1}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220710 15:47:29.642" endtime="20220710 15:47:29.642"/>
+</kw>
+<status status="NOT RUN" starttime="20220710 15:47:29.642" endtime="20220710 15:47:29.642"/>
+</branch>
+<branch type="ELSE">
+<kw name="Log" library="BuiltIn">
+<arg>Price of ${gold1} is equal price of ${gold2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20220710 15:47:29.642" endtime="20220710 15:47:29.642"/>
+</kw>
+<status status="NOT RUN" starttime="20220710 15:47:29.642" endtime="20220710 15:47:29.642"/>
+</branch>
+<status status="PASS" starttime="20220710 15:47:29.641" endtime="20220710 15:47:29.642"/>
+</if>
+<status status="PASS" starttime="20220710 15:47:29.641" endtime="20220710 15:47:29.642"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:20.480" endtime="20220710 15:47:29.642"/>
+</kw>
+<kw name="Close Web Page" library="common_keywords">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220710 15:47:29.643" endtime="20220710 15:47:30.522"/>
+</kw>
+<status status="PASS" starttime="20220710 15:47:29.643" endtime="20220710 15:47:30.523"/>
+</kw>
+<status status="PASS" starttime="20220710 15:44:03.523" endtime="20220710 15:47:30.525"/>
+</test>
+<status status="PASS" starttime="20220710 15:44:03.348" endtime="20220710 15:47:30.529"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 01">TC 01</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
